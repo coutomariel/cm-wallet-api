@@ -12,8 +12,12 @@ import com.coutomariel.wallet.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
-	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	public UserServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
 	@Override
 	public User save(User user) {
