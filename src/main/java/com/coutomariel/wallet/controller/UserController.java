@@ -15,6 +15,7 @@ import com.coutomariel.wallet.dto.UserDTO;
 import com.coutomariel.wallet.entity.User;
 import com.coutomariel.wallet.response.Response;
 import com.coutomariel.wallet.service.UserService;
+import com.coutomariel.wallet.util.Bcrypt;
 
 @RestController
 @RequestMapping("/users")
@@ -45,7 +46,7 @@ public class UserController {
 		user.setId(dto.getId());
 		user.setName(dto.getName());
 		user.setEmail(dto.getEmail());
-		user.setPassword(dto.getPassword());
+		user.setPassword(Bcrypt.getHash(dto.getPassword()));
 		return user;
 	}
 
@@ -54,7 +55,6 @@ public class UserController {
 		dto.setId(user.getId());
 		dto.setName(user.getName());
 		dto.setEmail(user.getEmail());
-		dto.setPassword(user.getPassword());
 		return dto;
 	}
 }
