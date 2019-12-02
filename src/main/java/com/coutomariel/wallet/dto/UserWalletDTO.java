@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class UserWalletTTO {
+public class UserWalletDTO {
 	
 	private Long id;
 	@NotNull(message = "Informe o id do usuário")
