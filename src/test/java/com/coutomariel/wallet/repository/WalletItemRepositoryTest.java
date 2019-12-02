@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.coutomariel.wallet.entity.Wallet;
 import com.coutomariel.wallet.entity.WalletItem;
+import com.coutomariel.wallet.util.enums.TypeEnum;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -21,7 +22,7 @@ public class WalletItemRepositoryTest {
 
 	private static final Date DATE = new Date();
 	private static final String DESCRIPTION = "Conta de luz";
-	private static final String TYPE = "EN";
+	private static final TypeEnum TYPE = TypeEnum.EN;
 	private static final BigDecimal VALUE = BigDecimal.valueOf(65);
 	
 	
