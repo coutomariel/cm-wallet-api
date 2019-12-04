@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserDTO {
+public class UserDto {
 
 	private Long id;
 	@Length(min = 3, max = 30, message = "O nom precisa ter entre 3 e 30 caracteres.")
