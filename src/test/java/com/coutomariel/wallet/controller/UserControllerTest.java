@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.coutomariel.wallet.dto.UserDTO;
+import com.coutomariel.wallet.dto.UserDto;
 import com.coutomariel.wallet.entity.User;
 import com.coutomariel.wallet.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -78,7 +78,7 @@ public class UserControllerTest {
 
 	public String getJsonPayLoad(Long id, String email, String name, String password) 
 			throws JsonProcessingException {
-		UserDTO userDTO = new UserDTO();
+		UserDto userDTO = new UserDto();
 		userDTO.setId(id);
 		userDTO.setEmail(email);
 		userDTO.setName(name);

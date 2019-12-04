@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coutomariel.wallet.dto.UserDTO;
+import com.coutomariel.wallet.dto.UserDto;
 import com.coutomariel.wallet.entity.User;
 import com.coutomariel.wallet.response.Response;
 import com.coutomariel.wallet.service.UserService;
@@ -29,8 +29,8 @@ public class UserController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Response<UserDTO>> create(@Valid @RequestBody UserDTO userDTO, BindingResult result) {
-		Response<UserDTO> response = new Response<UserDTO>();
+	public ResponseEntity<Response<UserDto>> create(@Valid @RequestBody UserDto userDTO, BindingResult result) {
+		Response<UserDto> response = new Response<UserDto>();
 		if(result.hasErrors()) {
 			result.getAllErrors().forEach(e -> response.getErrors().add(e.getDefaultMessage()));
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
@@ -41,7 +41,7 @@ public class UserController {
 
 	}
 
-	private User convertDtoToEntity(UserDTO dto) {
+	private User convertDtoToEntity(UserDto dto) {
 		User user = new User();
 		user.setId(dto.getId());
 		user.setName(dto.getName());
@@ -50,8 +50,8 @@ public class UserController {
 		return user;
 	}
 
-	private UserDTO convertEntityToDto(User user) {
-		UserDTO dto = new UserDTO();
+	private UserDto convertEntityToDto(User user) {
+		UserDto dto = new UserDto();
 		dto.setId(user.getId());
 		dto.setName(user.getName());
 		dto.setEmail(user.getEmail());
