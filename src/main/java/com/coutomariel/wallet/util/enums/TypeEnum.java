@@ -2,8 +2,8 @@ package com.coutomariel.wallet.util.enums;
 
 public enum TypeEnum {
 	
-	EN("Entrada"),
-	SD("Saída");
+	EN("ENTRADA"),
+	SD("SAÍDA");
 	
 	private final String value;
 
